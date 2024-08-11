@@ -86,7 +86,7 @@ def profile(request):
         pro_pic = 'agri_optima_app/profile_pic/default.jpg'    
     
     # Fetching weather data based on user's location
-    api_key = ''
+    api_key = 'b2ebac2b4f133457981e6274fce1d89e'
                 # 748d19e21dc8cba8d9f339407498ea21
 
     def get_weather_data(latitude, longitude):
@@ -137,17 +137,17 @@ def profile(request):
         weather_data = None
 
     # Fetching news reports and handling soil/plant analysis
-    news_api_key = "436b9f29eb13fb237b6731e8e6c14ac3_"
-    url = "https://api.worldapi.com/reports?term=crops%20in%20canada&limit=20&offset=0&use_nlp=1&api_key="
-    response = requests.get(url + news_api_key)
-    data = response.json()
-    reports = data.get("reports", [])
-    canada_reports = [
-        report for report in reports
-        if report.get("location_country") == "Canada" 
-        and report.get("tag") in ["society & culture", "business & economics", "science & technology", "politics & government"]
-        and len(report.get("source_citation_title").split()) < 17
-    ]
+    #news_api_key = "436b9f29eb13fb237b6731e8e6c14ac3_"
+    #url = "https://api.worldapi.com/reports?term=crops%20in%20canada&limit=20&offset=0&use_nlp=1&api_key="
+    #response = requests.get(url + news_api_key)
+    #data = response.json()
+    #reports = data.get("reports", [])
+    #canada_reports = [
+    #    report for report in reports
+    #    if report.get("location_country") == "Canada" 
+    #    and report.get("tag") in ["society & culture", "business & economics", "science & technology", "politics & government"]
+    #    and len(report.get("source_citation_title").split()) < 17
+    #]
 
     classification_result = None
     classification_result_plant = None
@@ -193,8 +193,8 @@ def profile(request):
 
 
     return render(request, 'agri_optima_app/profile.html', {
-        'weather_data': weather_data,
-        'canada_reports': canada_reports,
+        #'weather_data': weather_data,
+        #'canada_reports': canada_reports,
         'form': form,
         'form_plant': form_plant,
         'result': classification_result,

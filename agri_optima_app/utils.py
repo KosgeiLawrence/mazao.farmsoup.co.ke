@@ -10,8 +10,7 @@ soil_classes = [
     'Yellow Soil',
 ]
 
-#soil_model = tf.keras.models.load_model('agri_optima_app/templates/agri_optima_app/soil_analysis_V1.h5')
-
+soil_model = tf.keras.models.load_model('agri_optima_app/templates/agri_optima_app/soil_analysis_V1.h5')
 def classify_image_soil(image):
     img = Image.open(image)
     img = img.resize((220, 220))  # Adjust to your model's input size
@@ -30,23 +29,23 @@ def classify_image_soil(image):
     return predicted_class_label
 
 
-# plant_classes = [
-#     'Apple___Apple_scab', 'Apple___Black_rot', 'Apple___healthy',
-#     'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot',
-#     'Potato_blight', 'Soybean___healthy', 'Squash___Powdery_mildew',
-#     'Tomato___Bacterial_spot', 'Tomato___Late_blight',
-#     'Tomato___Septoria_leaf_spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
-#     'Tomato___healthy'
-# ]
-
 plant_classes = [
-'Apple Scab', 'Corn Common Rust',
- 'Orange Haunglongbing (Citrus_greening)', 'Peach Bacterial Spot',
- 'Potato Blight', 'Squash Powdery Mildew',
- 'Tomato Yellow Leaf Curl Virus'
-]
+     'Apple___Apple_scab', 'Apple___Black_rot', 'Apple___healthy',
+     'Orange___Haunglongbing_(Citrus_greening)', 'Peach___Bacterial_spot',
+     'Potato_blight', 'Soybean___healthy', 'Squash___Powdery_mildew',
+     'Tomato___Bacterial_spot', 'Tomato___Late_blight',
+     'Tomato___Septoria_leaf_spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus',
+     'Tomato___healthy'
+ ]
 
-#plant_leaf_model = tf.keras.models.load_model('agri_optima_app/templates/agri_optima_app/PLD_T4_model_final.h5')
+#plant_classes = [
+#'Apple Scab', 'Corn Common Rust',
+# 'Orange Haunglongbing (Citrus_greening)', 'Peach Bacterial Spot',
+# 'Potato Blight', 'Squash Powdery Mildew',
+# 'Tomato Yellow Leaf Curl Virus'
+#]
+
+plant_leaf_model = tf.keras.models.load_model('agri_optima_app/templates/agri_optima_app/PLD_T4_model_final.h5')
 
 def classify_image_plant(image):
     img = Image.open(image)
