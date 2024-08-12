@@ -163,7 +163,7 @@ tensorboard==2.17.0
 tensorboard-data-server==0.7.2
 tensorflow==2.17.0
 tensorflow-datasets==4.9.1
-tensorflow-intel==2.17.0
+tensorflow-intel==0.0.1
 tensorflow-metadata==1.15.0
 termcolor==2.4.0
 terminado==0.17.1
